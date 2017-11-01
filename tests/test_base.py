@@ -70,5 +70,6 @@ def test_value_error():
     reset_match_hostname()
     patch_match_hostname()
 
-    cert = {'subject': ((('commonName', 'xn--n1aiccj.xn--b1aew.xn--p1ai'),),)}
-    ssl.match_hostname(cert, 'цфоут.мвд.рф')
+    with pytest.raises(ssl.CertificateError):
+        cert = {'subject': ((('commonName', '.net'),),)}
+        ssl.match_hostname(cert, '.com')
