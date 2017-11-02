@@ -46,5 +46,8 @@ Usage
 Motivation
 ----------
 
+* Here is 100% backward capability
 * Related aiohttp `issue <https://github.com/aio-libs/aiohttp/issues/949>`_
-* It is not fixed yet (by November 2017) in python itself
+* Related Python `bug <https://bugs.python.org/issue31872>`_
+* Related Python `pull request <https://github.com/python/cpython/pull/3010>`_
+* It is not fixed yet (by November 2 2017) in python itself
