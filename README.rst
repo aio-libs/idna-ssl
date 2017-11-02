@@ -1,7 +1,7 @@
 idna_ssl
 ========
 
-:info: Patch ssl.match_hostname for Unicode(inda) domains support
+:info: Patch ssl.match_hostname for Unicode(idna) domains support
 
 .. image:: https://travis-ci.org/wikibusiness/idna_ssl.svg?branch=master
     :target: https://travis-ci.org/wikibusiness/idna_ssl

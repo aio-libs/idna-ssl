@@ -29,7 +29,7 @@ setup(
     author='OCEAN S.A.',
     author_email='osf@ocean.io',
     url='https://github.com/wikibusiness/idna_ssl',
-    description='Patch ssl.match_hostname for Unicode(inda) domains support',
+    description='Patch ssl.match_hostname for Unicode(idna) domains support',
     long_description=read('README.rst'),
     setup_requires=['pytest-runner'] if needs_pytest else [],
     tests_require=['pytest', 'pytest-asyncio', 'pytest-cov', 'aiohttp>2.3'],
