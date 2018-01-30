@@ -51,3 +51,10 @@ Motivation
 * Related Python `bug <https://bugs.python.org/issue31872>`_
 * Related Python `pull request <https://github.com/python/cpython/pull/3010>`_
 * It is not fixed yet (by November 2 2017) in python itself
+
+Thanks
+------
+
+The library was donated by `Ocean S.A. <https://ocean.io/>`_
+
+Thanks to the company for contribution.

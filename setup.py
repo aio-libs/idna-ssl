@@ -26,9 +26,9 @@ def read(*parts):
 setup(
     name='idna_ssl',
     version=get_version(),
-    author='OCEAN S.A.',
-    author_email='osf@ocean.io',
-    url='https://github.com/wikibusiness/idna_ssl',
+    author='Victor Kovtun',
+    author_email='hellysmile@gmail.com',
+    url='https://github.com/aio-libs/idna_ssl',
     description='Patch ssl.match_hostname for Unicode(idna) domains support',
     long_description=read('README.rst'),
     setup_requires=['pytest-runner'] if needs_pytest else [],
