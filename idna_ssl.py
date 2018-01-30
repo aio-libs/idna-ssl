@@ -1,21 +1,19 @@
 import ssl
 
-__version__ = '0.0.2'
+import idna
+
+__version__ = '1.0.0'
 
 real_match_hostname = ssl.match_hostname
 
 
 def patched_match_hostname(cert, hostname):
     try:
-        return real_match_hostname(cert, hostname)
-    except ssl.CertificateError as err:
-        try:
-            hostname = hostname.encode('idna').decode('ascii')
-        except ValueError:
-            # no luck to encode, raise previous ssl.CertificateError
-            raise err
+        hostname = idna.encode(hostname, uts46=True).decode('ascii')
+    except UnicodeError:
+        hostname = hostname.encode('idna').decode('ascii')
 
-        return real_match_hostname(cert, hostname)
+    return real_match_hostname(cert, hostname)
 
 
 def patch_match_hostname():

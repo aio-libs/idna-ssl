@@ -34,6 +34,7 @@ setup(
     setup_requires=['pytest-runner'] if needs_pytest else [],
     tests_require=['pytest', 'pytest-asyncio', 'pytest-cov', 'aiohttp>2.3'],
     py_modules=['idna_ssl'],
+    install_requires=['idna>=2.0'],
     include_package_data=True,
     zip_safe=False,
     classifiers=[

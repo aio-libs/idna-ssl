@@ -52,24 +52,20 @@ def test_match_hostname():
     reset_match_hostname()
     patch_match_hostname()
 
-    cert = {'subject': ((('commonName', 'цфоут.мвд.рф'),),)}
-    ssl.match_hostname(cert, 'цфоут.мвд.рф')
-
     cert = {'subject': ((('commonName', 'xn--n1aiccj.xn--b1aew.xn--p1ai'),),)}
     ssl.match_hostname(cert, 'xn--n1aiccj.xn--b1aew.xn--p1ai')
 
     cert = {'subject': ((('commonName', 'xn--n1aiccj.xn--b1aew.xn--p1ai'),),)}
     ssl.match_hostname(cert, 'цфоут.мвд.рф')
 
-    with pytest.raises(ssl.CertificateError):
-        cert = {'subject': ((('commonName', 'цфоут.мвд.рф'),),)}
-        ssl.match_hostname(cert, 'xn--n1aiccj.xn--b1aew.xn--p1ai')
+    cert = {'subject': ((('commonName', 'xn--einla-pqa.de'),),)}
+    ssl.match_hostname(cert, 'einlaß.de')
 
+    cert = {'subject': ((('commonName', 'xn--einla-pqa.de'),),)}
+    ssl.match_hostname(cert, 'xn--einla-pqa.de')
 
-def test_value_error():
-    reset_match_hostname()
-    patch_match_hostname()
+    cert = {'subject': ((('commonName', 'abc_def.com'),),)}
+    ssl.match_hostname(cert, 'abc_def.com')
 
-    with pytest.raises(ssl.CertificateError):
-        cert = {'subject': ((('commonName', '.net'),),)}
-        ssl.match_hostname(cert, '.com')
+    cert = {'subject': ((('commonName', '::1'),),)}
+    ssl.match_hostname(cert, '::1')
