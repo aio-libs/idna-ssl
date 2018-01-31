@@ -49,8 +49,8 @@ Motivation
 * Here is 100% backward capability
 * Related aiohttp `issue <https://github.com/aio-libs/aiohttp/issues/949>`_
 * Related Python `bug <https://bugs.python.org/issue31872>`_
-* Related Python `pull request <https://github.com/python/cpython/pull/3010>`_
-* It is not fixed yet (by November 2 2017) in python itself
+* Related Python `pull request <https://github.com/python/cpython/pull/3462>`_
+* It is fixed (by January 27 2018) in upcoming Python 3.7, but `IDNA2008 <https://tools.ietf.org/html/rfc5895>`_ is still broken
 
 Thanks
 ------
