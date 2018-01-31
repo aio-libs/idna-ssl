@@ -3,14 +3,14 @@ idna_ssl
 
 :info: Patch ssl.match_hostname for Unicode(idna) domains support
 
-.. image:: https://travis-ci.org/wikibusiness/idna_ssl.svg?branch=master
-    :target: https://travis-ci.org/wikibusiness/idna_ssl
+.. image:: https://travis-ci.org/aio-libs/idna_ssl.svg?branch=master
+    :target: https://travis-ci.org/aio-libs/idna_ssl
 
 .. image:: https://img.shields.io/pypi/v/idna_ssl.svg
     :target: https://pypi.python.org/pypi/idna_ssl
 
-.. image:: https://codecov.io/gh/wikibusiness/idna_ssl/branch/master/graph/badge.svg
-    :target: https://codecov.io/gh/wikibusiness/idna_ssl
+.. image:: https://codecov.io/gh/aio-libs/idna_ssl/branch/master/graph/badge.svg
+    :target: https://codecov.io/gh/aio-libs/idna_ssl
 
 Installation
 ------------
