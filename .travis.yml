@@ -8,9 +8,21 @@ install:
 script:
   - export TOXENV=py`python -c 'import sys; print("".join(map(str, sys.version_info[:2])))'`
   - echo "$TOXENV"
-
   - tox
 after_success:
   - pip install codecov
   - codecov
 cache: pip
+notifications:
+  email: false
+
+deploy:
+  provider: pypi
+  user: hellysmile
+  password:
+    secure: "XtNn3YYiMoNOv0NyB2S3VrTHhwRO/MMdWFG3g8my3TdSX84SZEFDMX0uI85Pptqz8RJ5z7fS/aHPwg8WcJ152P5nZCOS68qzmbMd7v7ly2pwCOX599CnEy7tHXRjw4r/VdPAQeDTH9GMkL5OX1nP7XdTplNe0DKHTddwf+SGZpj19x3FyiaSxnuAueoE24S3gBOeOsc2TV4NR9PEXiXCmS8n3Pnfg0DeqRiBtf6ghvfz5rd3lFcM3MsLADMJQkavHmcuJalOqx9xm4A4iPJkXZXVTlDDENN4UIgJtjLv3PxNKvjZQ1Zu7cuk8OWQkCcaZQjoyQwJM1FzvmZGMcM4Pmo2ykR6s4KZfntHGaZfghMpjp+moT3fj/RKUzHhVvGjuomQNzO00F2wo/yAxsbF3xSKzVSJFSZE6tqsz8pTK0Wq1JSSYXB/epd2uO+gyIsPWvjcqmvJ70stDdCTSnrzMOX40yVe66QITthiUl4C6z3dF19JyRuVTQelPs6rf8Wt6TbSRvoAZz/DfMuEEKrkiJACOdz7Pq2DPuKLKlJNVg1A6qbrRCXNgQkblaU2apLfLWlxE2GJFmVhKDOLVVB/wr8ClDjDu33gsQku0UkEbJm8cOb5YL3ANq2XtGrPSdvZFy+gQxIw7tikvxsq6Rj2DSBMbaL4aKc5/edD7LrMMxg="
+  distributions: "sdist upload"
+  on:
+    tags: true
+    all_branches: true
+    python: 3.5
