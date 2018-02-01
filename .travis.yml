@@ -14,6 +14,3 @@ after_success:
   - pip install codecov
   - codecov
 cache: pip
-notifications:
-  email: false
-  slack: oceanio:qISToAOQglhPzOlbJ3CjNJLF
