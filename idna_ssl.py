@@ -2,7 +2,7 @@ import ssl
 
 import idna
 
-__version__ = '1.0.0'
+__version__ = '1.0.0a1'
 
 real_match_hostname = ssl.match_hostname
 
