@@ -1,4 +1,4 @@
-idna_ssl
+idna-ssl
 ========
 
 :info: Patch ssl.match_hostname for Unicode(idna) domains support
@@ -17,7 +17,7 @@ Installation
 
 .. code-block:: shell
 
-    pip install idna_ssl
+    pip install idna-ssl
 
 Usage
 -----
