@@ -1,4 +1,5 @@
 import ssl
+import sys
 
 import idna
 
@@ -17,6 +18,9 @@ def patched_match_hostname(cert, hostname):
 
 
 def patch_match_hostname():
+    if sys.version_info >= (3, 7, 0):
+        return
+
     if hasattr(ssl.match_hostname, 'patched'):
         return
 
