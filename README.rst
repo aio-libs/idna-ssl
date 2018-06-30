@@ -9,7 +9,7 @@ idna-ssl
 .. image:: https://img.shields.io/pypi/v/idna_ssl.svg
     :target: https://pypi.python.org/pypi/idna_ssl
 
-.. image:: https://codecov.io/gh/aio-libs/idna_ssl/branch/master/graph/badge.svg
+.. image:: https://codecov.io/gh/aio-libs/idna-ssl/branch/master/graph/badge.svg
     :target: https://codecov.io/gh/aio-libs/idna-ssl
 
 Installation
