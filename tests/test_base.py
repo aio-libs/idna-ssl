@@ -5,11 +5,18 @@ import pytest
 
 from idna_ssl import PY_370, patch_match_hostname, reset_match_hostname
 
-
-@pytest.mark.skipif(
+skip_370 = pytest.mark.skipif(
     PY_370,
-    reason='Python>=3.7.0 do not raise extra ssl.CertificateError',
+    reason='Python>=3.7.0 do not need monkey patching',
 )
+
+only_370 = pytest.mark.skipif(
+    not PY_370,
+    reason='Python>=3.7.0 do not need monkey patching',
+)
+
+
+@skip_370
 @pytest.mark.asyncio
 async def test_aiohttp(loop):
     reset_match_hostname()
@@ -30,10 +37,7 @@ async def test_aiohttp(loop):
             assert response.status == 200
 
 
-@pytest.mark.skipif(
-    not PY_370,
-    reason='Python>=3.7.0 do not need monkey patching',
-)
+@only_370
 @pytest.mark.asyncio
 async def test_aiohttp_py370(loop):
     reset_match_hostname()
@@ -47,10 +51,7 @@ async def test_aiohttp_py370(loop):
             assert response.status == 200
 
 
-@pytest.mark.skipif(
-    PY_370,
-    reason='Python>=3.7.0 monkey patching is disabled',
-)
+@skip_370
 def test_patch():
     reset_match_hostname()
 
@@ -90,10 +91,7 @@ def test_match_hostname():
     ssl.match_hostname(cert, '::1')
 
 
-@pytest.mark.skipif(
-    PY_370,
-    reason='Python>=3.7.0 monkey patching is disabled',
-)
+@skip_370
 def test_match_hostname_not_py370():
     reset_match_hostname()
     patch_match_hostname()
