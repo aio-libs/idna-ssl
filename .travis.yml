@@ -14,6 +14,8 @@ after_success:
   - pip install codecov
   - codecov
 cache: pip
+env:
+  TOXENV: py
 
 jobs:
   include:
