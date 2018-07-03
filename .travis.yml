@@ -3,7 +3,6 @@ language: python
 python:
   - "3.5"
   - "3.6"
-  - "3.7-dev"
 install:
   - pip install -U setuptools
   - pip install -U pip
@@ -15,6 +14,12 @@ after_success:
   - pip install codecov
   - codecov
 cache: pip
+
+jobs:
+  include:
+  - python: "3.7"
+    dist: xenial
+    sudo: required
 
 deploy:
   provider: pypi
