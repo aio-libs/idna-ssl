@@ -17,17 +17,23 @@ cache: pip
 
 jobs:
   include:
-  - python: "3.7"
+  - &py-3_7-base
+    python: "3.7"
     dist: xenial
     sudo: required
 
-deploy:
-  provider: pypi
-  user: hellysmile
-  password:
-    secure: "Ep9jJ8Hf9a1CasRFZEgB6TF5VOuwnG9RgQfV2SwubAteGxMiXeTdU17Y9NBl6Bc+YbWAFKcCuOOzCUr0LpN4dAGQEG+6cwJLw9owJex90VJjC1iTK2aN8/c9MvqLaA+bfzeH4RMvlRpyRDMhcGj1hqPgxBKKnn6YKc3BHum1mpOW+Sab/8hkDm6c+C8GwRPyJQe3b6H9THeICRzquTUx/1rWBSdVwr4WaCM3mu6YpgqLFsA8i+V4ta6Px9aF+FzoQOw+mewbOXUg3RJEJTbEgzVF//+NB21MsC1JIwsxSa5ITo+5LgEj2QLV9EYYrgvRPDl7sqgHZDm3hlKiSy/p7R4dYZEd1KuQddW4QMmttoDRwVLMcPtO8GUOfM4tNbbexXpVuq6YaXTz92sKMkgbutwtd24czB2I8HknXo3VaZd5BuosTq5pk9oLPbjkidOz++moawiOMeZqodwIjo9LlLMgh+3+HK6kEP0QeVq4HnDSYLFw8af38cj8j3MYFVJreHMVZQGIe/F+qmPWyWkfFWcf5ZD3JGDHZbSWtYUZGxOhu15U6vOM+59mrxp7Z/ZJvK6bATOkuw9MTcgCslYtgbjLpvS8d5PKBGdgf8p5iRRY6UFse0J3b94g7Utyi4tlZPCgn9tWrw9uMx/srbulab7hvNJoz2J75bpmGY64uzE="
-  distributions: "sdist"
-  on:
-    tags: true
-    all_branches: true
-    python: 3.5
+  - name: Deploy to PYPI
+    <<: *py-3_7-base
+    install: skip
+    script: skip
+    after_success: []
+    deploy:
+      provider: pypi
+      user: hellysmile
+      password:
+        secure: "Ep9jJ8Hf9a1CasRFZEgB6TF5VOuwnG9RgQfV2SwubAteGxMiXeTdU17Y9NBl6Bc+YbWAFKcCuOOzCUr0LpN4dAGQEG+6cwJLw9owJex90VJjC1iTK2aN8/c9MvqLaA+bfzeH4RMvlRpyRDMhcGj1hqPgxBKKnn6YKc3BHum1mpOW+Sab/8hkDm6c+C8GwRPyJQe3b6H9THeICRzquTUx/1rWBSdVwr4WaCM3mu6YpgqLFsA8i+V4ta6Px9aF+FzoQOw+mewbOXUg3RJEJTbEgzVF//+NB21MsC1JIwsxSa5ITo+5LgEj2QLV9EYYrgvRPDl7sqgHZDm3hlKiSy/p7R4dYZEd1KuQddW4QMmttoDRwVLMcPtO8GUOfM4tNbbexXpVuq6YaXTz92sKMkgbutwtd24czB2I8HknXo3VaZd5BuosTq5pk9oLPbjkidOz++moawiOMeZqodwIjo9LlLMgh+3+HK6kEP0QeVq4HnDSYLFw8af38cj8j3MYFVJreHMVZQGIe/F+qmPWyWkfFWcf5ZD3JGDHZbSWtYUZGxOhu15U6vOM+59mrxp7Z/ZJvK6bATOkuw9MTcgCslYtgbjLpvS8d5PKBGdgf8p5iRRY6UFse0J3b94g7Utyi4tlZPCgn9tWrw9uMx/srbulab7hvNJoz2J75bpmGY64uzE="
+      distributions: "sdist"
+      on:
+        tags: true
+        all_branches: true
+        python: 3.7
