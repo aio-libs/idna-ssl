@@ -7,7 +7,7 @@ from idna_ssl import PY_370, patch_match_hostname, reset_match_hostname
 
 skip_370 = pytest.mark.skipif(
     PY_370,
-    reason='Python>=3.7.0 do not need monkey patching',
+    reason='Python>=3.7.0 do not support monkey patching',
 )
 
 only_370 = pytest.mark.skipif(
