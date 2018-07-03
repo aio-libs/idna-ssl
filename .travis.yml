@@ -1,3 +1,5 @@
+conditions: v1
+
 dist: trusty
 language: python
 python:
@@ -24,7 +26,8 @@ jobs:
     dist: xenial
     sudo: required
 
-  - name: Deploy to PYPI
+  - stage: Deploy to PYPI
+    if: tag IS present
     <<: *py-3_7-base
     install: skip
     script: skip
