@@ -35,9 +35,9 @@ jobs:
     after_success: []
     deploy:
       provider: pypi
-      user: hellysmile
+      user: aio-libs-bot
       password:
-        secure: "Ep9jJ8Hf9a1CasRFZEgB6TF5VOuwnG9RgQfV2SwubAteGxMiXeTdU17Y9NBl6Bc+YbWAFKcCuOOzCUr0LpN4dAGQEG+6cwJLw9owJex90VJjC1iTK2aN8/c9MvqLaA+bfzeH4RMvlRpyRDMhcGj1hqPgxBKKnn6YKc3BHum1mpOW+Sab/8hkDm6c+C8GwRPyJQe3b6H9THeICRzquTUx/1rWBSdVwr4WaCM3mu6YpgqLFsA8i+V4ta6Px9aF+FzoQOw+mewbOXUg3RJEJTbEgzVF//+NB21MsC1JIwsxSa5ITo+5LgEj2QLV9EYYrgvRPDl7sqgHZDm3hlKiSy/p7R4dYZEd1KuQddW4QMmttoDRwVLMcPtO8GUOfM4tNbbexXpVuq6YaXTz92sKMkgbutwtd24czB2I8HknXo3VaZd5BuosTq5pk9oLPbjkidOz++moawiOMeZqodwIjo9LlLMgh+3+HK6kEP0QeVq4HnDSYLFw8af38cj8j3MYFVJreHMVZQGIe/F+qmPWyWkfFWcf5ZD3JGDHZbSWtYUZGxOhu15U6vOM+59mrxp7Z/ZJvK6bATOkuw9MTcgCslYtgbjLpvS8d5PKBGdgf8p5iRRY6UFse0J3b94g7Utyi4tlZPCgn9tWrw9uMx/srbulab7hvNJoz2J75bpmGY64uzE="
+        secure: "UWf6kZQS/dpqGXJaYZrS1EWlsIu7xIEfagrf/Fs2hhP2A+65CqsI8He37Wf9Xr8KudLhDl/ddGjPAGcbm8ZJaFnv688iEazbAzx6kMIBaLwjOV2hZ/5DCj4f6Z8HBxDbwcC/bimbEMY8xoCdmYqegobFR4jdKAHQdwPynigoMtrNuavehREKXTVAljUWLrvD3DZ7HJhfoQM5cotmnN7XrVK1xA1PWK8ey+gJewLphD4DO6N0kk59PP3LnIGZjik96DlAcdZM3x6zoTq7pzhS9ZBoua26zfjE6+kjahrCYlHtN4JO22b4/wHZUho8CXIrd/3KTul5nJzh4B2GcF0YQWpAYTexRIqXHrxBUhUv3iMWOI8GVWCl3//zO0a5C2qarcBq6fQe2vDI5ecfcQDQTqJxOJ5MADRM+QGG03Zi9PgNK+bUjOHi/EAc1z3C2nDeK0DR62c5JHz0bsGMsENSjAoEM2XedP1OfvrnhS8PEbIIVKxixxPmiu+iLrWp7GiTw5T026EOuA2ulzZOCIAN774K5YuDoAB5sebkX3EI3sgm1jygDKsign135BRYnDs4dtZG4ruNn/CzoRtvaGK+O8vBi2xqpx8LWC6tglXM8Ny2TXlqJnntEj/U2PRfDmhI3UIgx8E8M7s+WXyxyT5RxC67VSsnhSnb7Y0F5EXYM3E="
       distributions: "sdist"
       on:
         tags: true
