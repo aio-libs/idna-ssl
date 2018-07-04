@@ -35,7 +35,6 @@ setup(
     tests_require=['pytest', 'pytest-asyncio', 'pytest-cov', 'aiohttp>2.3'],
     py_modules=['idna_ssl'],
     install_requires=['idna>=2.0'],
-    python_requires='<3.7.0',
     include_package_data=True,
     zip_safe=False,
     classifiers=[
@@ -48,6 +47,7 @@ setup(
         'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.7',
     ],
     keywords=['ssl', 'Unicode', 'idna', 'match_hostname'],
 )

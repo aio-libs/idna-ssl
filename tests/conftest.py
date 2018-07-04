@@ -14,11 +14,14 @@ def event_loop(request):
 
     yield loop
 
+    loop.run_until_complete(loop.shutdown_asyncgens())
+
     loop.call_soon(loop.stop)
     loop.run_forever()
     loop.close()
 
     gc.collect()
+    gc.collect()  # for pypy
 
 
 @pytest.fixture
