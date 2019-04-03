@@ -2,3 +2,5 @@ include README.rst
 include LICENSE
 recursive-exclude * __pycache__
 recursive-exclude * *.py[co]
+recursive-include tests *.py
+include tox.ini
